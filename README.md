@@ -166,27 +166,39 @@ cd fpga-projects
 
 ### Build a Project
 
-Each project includes TCL scripts for reproducible builds:
+Each project includes TCL scripts for reproducible builds. **Recommended: Use Vivado Tcl Shell** (ensures environment is properly configured).
 
+**Option 1: Vivado Tcl Shell (Recommended)**
+
+Open "Vivado 2025.2 Tcl Shell" from Start Menu, then:
+```tcl
+cd C:/progs/fpga-projects/projects/01-uart
+source scripts/create_project.tcl
+start_gui   ;# Optional: open GUI after project creation
+```
+
+**Option 2: Command Line** (requires Vivado in PATH)
 ```bash
 cd projects/01-uart
-
-# Create Vivado project
-vivado -mode batch -source scripts/create_project.tcl
-
-# Or open GUI
 vivado -mode gui -source scripts/create_project.tcl
 ```
 
 ### Run Simulations
 
+**Option 1: Vivado Tcl Shell**
+```tcl
+cd C:/progs/fpga-projects/projects/01-uart
+source scripts/run_sim.tcl
+```
+
+**Option 2: Command Line**
 ```bash
 cd projects/01-uart
-
-# Using Vivado simulator
 vivado -mode batch -source scripts/run_sim.tcl
+```
 
-# Or using Verilator (faster)
+**Option 3: Verilator** (faster, for quick iterations)
+```bash
 make sim
 ```
 
