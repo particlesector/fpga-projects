@@ -1,0 +1,354 @@
+# =============================================================================
+# FPGA Portfolio Monorepo .gitignore
+# =============================================================================
+
+# =============================================================================
+# Xilinx Vivado
+# =============================================================================
+
+# Project files (regenerated from TCL scripts)
+*.xpr
+*.xpr.bak
+
+# Generated directories
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.srcs/sources_1/ip/
+*.srcs/sources_1/bd/
+*.gen/
+
+# Synthesis and implementation outputs
+*.dcp
+*.bit
+*.bin
+*.ltx
+*.mmi
+
+# Reports (regenerate as needed)
+*_utilization_*.rpt
+*_timing_*.rpt
+*_power_*.rpt
+*_drc_*.rpt
+*_methodology_*.rpt
+*.rpx
+
+# Logs
+vivado*.log
+vivado*.jou
+vivado*.str
+*.log
+*.jou
+
+# Hardware manager
+*.hwdef
+*.sysdef
+hw_ila_data_files/
+*.wcfg
+
+# SDK / Vitis
+*.sdk/
+.Xil/
+.metadata/
+
+# IP catalog
+ip_repo/
+
+# Block design outputs (regenerate from TCL/BD files)
+*.hwh
+
+# =============================================================================
+# Xilinx Vitis / SDK
+# =============================================================================
+.sdk/
+Debug/
+Release/
+*.elf
+*.o
+*.d
+
+# =============================================================================
+# Gowin IDE (Tang Nano / Tang Mega)
+# =============================================================================
+
+# Project files
+*.gprj.user
+*.cer
+
+# Implementation outputs
+impl/
+*.posp
+*.tr
+*.power
+*.pin
+*.rpt.txt
+*.rpt.html
+*.svf
+*.sdf
+
+# Synthesis outputs
+*.vo
+*.vg
+*.vm
+*.area
+*.timing
+
+# Bitstream (generated)
+*.fs
+*.binx
+
+# Logs
+*.al
+*.el
+
+# =============================================================================
+# Simulation
+# =============================================================================
+
+# Vivado simulation
+*.wdb
+*.wcfg
+
+# ModelSim / QuestaSim
+work/
+transcript
+vsim.wlf
+*.mpf
+*.mti
+modelsim.ini
+
+# VCS
+csrc/
+simv*
+*.vpd
+*.key
+DVEfiles/
+ucli.key
+inter.vpd
+
+# Verilator
+obj_dir/
+*.vcd
+*.fst
+*.lxt
+*.lxt2
+
+# Icarus Verilog
+*.vvp
+
+# GTKWave
+*.gtkw
+
+# Cocotb
+results.xml
+__pycache__/
+*.pyc
+sim_build/
+
+# =============================================================================
+# Build Outputs (Keep Source, Not Output)
+# =============================================================================
+
+# Don't track generated bitstreams (large binaries)
+# If you need to archive a release bitstream, use GitHub Releases
+bitstreams/
+
+# Build directories
+build/
+output/
+out/
+
+# =============================================================================
+# Documentation Build Outputs
+# =============================================================================
+
+# Doxygen
+docs/html/
+docs/latex/
+
+# Sphinx
+docs/_build/
+
+# =============================================================================
+# Hardware Design (KiCad)
+# =============================================================================
+
+# KiCad backup files
+*-bak
+*-backups/
+*.kicad_prl
+*.kicad_pcb-bak
+*.sch-bak
+*~
+\#*\#
+*.lck
+*.orig
+
+# KiCad auto-save
+_autosave-*
+
+# Fabrication outputs (regenerate from source)
+# Comment these out if you want to track gerbers
+# gerbers/
+# fab/
+
+# 3D cache
+*.3dshapes/
+fp-lib-table.bak
+sym-lib-table.bak
+
+# =============================================================================
+# 3D Printing
+# =============================================================================
+
+# Keep STL source, optionally exclude sliced files
+*.gcode
+*.3mf
+*.bgcode
+
+# =============================================================================
+# IDE and Editor Files
+# =============================================================================
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# JetBrains (CLion, etc.)
+.idea/
+*.iml
+
+# Eclipse
+.project
+.cproject
+.settings/
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+\#*#
+.#*
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# =============================================================================
+# Operating System Files
+# =============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+
+# =============================================================================
+# Python (for testbenches, scripts)
+# =============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+.eggs/
+*.egg-info/
+*.egg
+
+# Jupyter
+.ipynb_checkpoints/
+
+# =============================================================================
+# Miscellaneous
+# =============================================================================
+
+# Compressed files (usually generated/downloaded)
+# Uncomment if you don't want these tracked
+# *.zip
+# *.tar.gz
+# *.7z
+# *.rar
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Core dumps
+core
+*.core
+
+# Lock files
+*.lock
+
+# =============================================================================
+# Large Media Files - Use Git LFS or External Hosting
+# =============================================================================
+
+# Demo videos (host on YouTube, link in README)
+*.mp4
+*.mov
+*.avi
+*.mkv
+
+# Large images (consider compression before commit)
+# *.bmp  # Convert to PNG/JPG instead
+
+# =============================================================================
+# Project-Specific Exclusions
+# =============================================================================
+
+# RTL-SDR raw captures (very large)
+*.raw
+*.cu8
+*.cs8
+*.cu16
+*.cs16
+
+# Satellite image outputs (regenerate from decoder)
+# *.png in specific output directories
+projects/*/output/
+
+# =============================================================================
+# EXCEPTIONS - Files to KEEP even if matching above patterns
+# =============================================================================
+
+# Keep specific documentation images
+!docs/**/*.png
+!docs/**/*.jpg
+!docs/**/*.svg
+!**/media/*.png
+!**/media/*.jpg
+!**/media/*.svg
+
+# Keep constraint files
+!*.xdc
+
+# Keep memory initialization files
+!*.mem
+!*.coe
+!*.mif
+
+# Keep reference bitstreams for releases (if you choose to track them)
+# !releases/*.bit
